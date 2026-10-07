@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8002/summarize";
+const API_URL = `http://${window.location.hostname}:8002/summarize`;
 
 const fileDrop = document.getElementById("file-drop");
 const fileInput = document.getElementById("file-input");

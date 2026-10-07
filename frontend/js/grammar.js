@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8001/check";
+const API_URL = `http://${window.location.hostname}:8001/check`;
 
 const textInput = document.getElementById("input-text");
 const checkBtn = document.getElementById("check-btn");

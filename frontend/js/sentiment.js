@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8000/predict";
+const API_URL = `http://${window.location.hostname}:8000/predict`;
 
 const textInput = document.getElementById("input-text");
 const analyzeBtn = document.getElementById("analyze-btn");
