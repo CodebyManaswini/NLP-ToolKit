@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sentiment Analysis</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="sentiment.html" class="active">Sentiment Analysis</a>
+    <a href="grammar.html">Grammar Check</a>
+    <a href="summarize.html">Summarize</a>
+  </nav>
+  <main>
+    <h1>Sentiment Analysis</h1>
+    <p class="subtitle">Paste text below to check if it reads as positive or negative.</p>
+
+    <textarea id="input-text" placeholder="Type or paste a sentence..."></textarea>
+    <button id="analyze-btn">Analyze</button>
+
+    <div id="result" class="result-card"></div>
+  </main>
+
+  <script src="js/sentiment.js"></script>
+</body>
+</html>

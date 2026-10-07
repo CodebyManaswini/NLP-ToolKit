@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  languagetool:
+    image: erikvl87/languagetool:latest
+    container_name: languagetool
+    restart: unless-stopped
+    ports:
+      - "8010:8010"
+
+  grammar-service:
+    build: .
+    container_name: grammar-service
+    restart: unless-stopped
+    environment:
+      - LANGUAGETOOL_URL=http://languagetool:8010
+    ports:
+      - "8001:8001"
+    depends_on:
+      - languagetool
