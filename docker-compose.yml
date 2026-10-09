@@ -24,12 +24,6 @@ services:
       - languagetool
     restart: unless-stopped
 
-  summarization-service:
-    build: ./summarizationService
-    container_name: summarization-service
-    ports:
-      - "8002:8002"
-    restart: unless-stopped
 
   frontend:
     image: nginx:alpine
