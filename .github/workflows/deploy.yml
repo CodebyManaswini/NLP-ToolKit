@@ -52,6 +52,7 @@ jobs:
           target: /home/ubuntu/
           overwrite: true
 
+      
       - name: Deploy on EC2
         uses: appleboy/ssh-action@v1.2.0
         with:
@@ -60,7 +61,9 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd /home/ubuntu
-            docker compose -f docker-compose.prod.yml pull
-            docker compose -f docker-compose.prod.yml up -d --remove-orphans
-            docker image prune -f
-            docker compose -f docker-compose.prod.yml ps
+            test -f /home/ubuntu/.env || { echo "Missing Grafana environment file"; exit 1; }
+            docker compose --env-file /home/ubuntu/.env -f docker-compose.prod.yml pull
+            docker compose --env-file /home/ubuntu/.env -f docker-compose.prod.yml up -d --remove-orphans
+            docker compose --env-file /home/ubuntu/.env -f docker-compose.prod.yml ps
+            free -h
+
