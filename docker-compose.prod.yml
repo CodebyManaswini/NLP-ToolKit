@@ -27,10 +27,8 @@ services:
 
 
   frontend:
-    image: nginx:alpine
+    image: manaswini6i/nlp-toolkit-frontend:latest
     container_name: frontend
-    volumes:
-      - ./frontend:/usr/share/nginx/html:ro
     ports:
       - "8080:80"
     restart: unless-stopped
