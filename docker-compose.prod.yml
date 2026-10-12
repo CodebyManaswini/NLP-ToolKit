@@ -59,7 +59,7 @@ services:
     depends_on:
       - prometheus
     restart: unless-stopped
-    mem_limit: 160m
+    mem_limit: 256m
 
 volumes:
   prometheus-data:
